@@ -6,8 +6,36 @@
     <meta charset="utf-8" />
     <title>My Pulse</title>
 
-    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script>
+
+        textbox: {
+            $(document).ready(function () {
+                $(".signup").attr({
+                    onfocus: "empty(this);",
+                    onblur: "fill(this);"
+                });
+            });
+
+            function empty(textbox) {
+                if (textbox.value == textbox.name) {
+                    textbox.value = "";
+                    if (textbox.name == "Password") {
+                        textbox.type = "password";
+                    }
+                }
+            }
+
+            function fill(textbox) {
+                if (!textbox.value) {
+                    textbox.value = textbox.name;
+                    if (textbox.name == "Password") {
+                        textbox.type = "text";
+                    }
+                }
+            }
+        }
+        
         $(window).on('load', function () {
 
             var content = $("#centralMessage");
@@ -30,6 +58,11 @@
         body, html {
             height: 100%;
             margin: 0;
+        }
+
+        #logo {
+            height: 50px;
+            padding: 3px 10px;
         }
 
         .imagePanel {
@@ -57,12 +90,23 @@
         }
 
         #subtitle {
-            font-size:30px;
+            margin-top:15px;
+            font-size:25px;
         }
 
-        #logo {
-            height: 50px;
-            padding: 3px 10px;
+        #roundedTextbox {
+            height: 40px;
+            width: 400px;
+            font-size: 25px;
+            color: #6FCACA;
+            padding: 0px 20px;
+            margin-top: 20px;
+            border: 1px solid #949999;
+            border-radius: 30px;
+        }
+
+        #roundedButton {
+
         }
 
         ul.topnav {
@@ -120,6 +164,10 @@
         <div id="centralMessage">
             <div id="heading">Get to the heart of your city.</div>
             <div id="subtitle">Be the first to hear when we launch!</div>
+            <form>
+                <input type="text" id="roundedTextbox" value="Enter email" name="Enter email" class="signup"/>
+                
+            </form>
         </div>
     </div>
 
