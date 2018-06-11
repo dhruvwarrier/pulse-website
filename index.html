@@ -7,7 +7,9 @@
     <title>My Pulse</title>
 
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
-    <script>
+    <script type="text/javascript" src="smoothscroll.min.js"></script>
+
+    <script type="text/javascript">
 
         textbox: {
             $(document).ready(function () {
@@ -35,6 +37,13 @@
                 }
             }
         }
+
+        $(document).ready(function () {
+            // for some reason injection of the function into window is necessary, it won't run under <script>
+            window.goTo = function (objectID) {
+                document.querySelector(objectID).scrollIntoView({ behavior: 'smooth' });
+            }
+        });
 
         $(window).on('load', function () {
 
@@ -162,6 +171,7 @@
 
                 ul.topnav li a {
                     display: block;
+                    cursor:pointer;
                     color: #CC5D56;
                     text-align: center;
                     padding: 20px 30px;
@@ -189,13 +199,12 @@
     </style>
 </head>
 <body>
-
     <div class="imagePanel">
         <ul class="topnav">
             <li class="left"><img src="logos/logo_navbar.png" id="logo" /></li>
-            <li><a href="#contact">Stay in contact</a></li>
-            <li><a href="#whoweare">Who we are</a></li>
-            <li><a href="#about">About Pulse</a></li>
+            <li><a onclick="goTo('#contact');">Stay in contact</a></li>
+            <li><a onclick="goTo('#whoweare');">Who we are</a></li>
+            <li><a onclick="goTo('#about');">About Pulse</a></li>
         </ul>
 
         <div id="centralMessage">
@@ -210,7 +219,7 @@
 
     <div class="textPanel" id="about">
         <div class="textPanelHeading">About Pulse</div>
-        <p>Pulse is a revolutionary blah blah...</p>
+        <p>Pulse is a revolutionary new bla bla...</p>
     </div>
 
     <div class="textPanel" id="whoweare">
