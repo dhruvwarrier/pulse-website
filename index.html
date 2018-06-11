@@ -55,6 +55,10 @@
             src: url(simplifica.ttf) format('truetype');
         }
 
+        * {
+            font-family: 'Lato', sans-serif;
+        }
+
         body, html {
             height: 100%;
             margin: 0;
@@ -74,22 +78,42 @@
             background-size: cover;
         }
 
+        .textPanel {
+            height: 60%;
+            background-color:#f9f9f9;
+        }
+
+        .textPanelHeading {
+            color: #22254B;
+            font-size: 50px;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .footerPanel {
+            height:40%;
+            background-color: #22254B;
+        }
+
+        #footerPanelHeading {
+            color:white;
+        }
+
         #centralMessage {
             position: absolute;
             background-color: #FFF;
             color: #CC5D56;
             padding:20px;
             border-radius:5px;
-            font-family: 'Lato', sans-serif;
             text-align:center;
-            z-index: 2;
+            z-index: 1;
         }
 
-        #heading {
+        .heading {
             font-size: 80px;
         }
 
-        #subtitle {
+        .subtitle {
             margin-top:15px;
             font-size:25px;
         }
@@ -127,9 +151,9 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: 'Lato', light;
             font-size: larger;
             background-color: #22254B;
+            z-index:2;
         }
 
             ul.topnav li {
@@ -168,20 +192,40 @@
 
     <div class="imagePanel">
         <ul class="topnav">
-            <li class="left"><img src="logos/logo_navbar.png" id="logo"/></li>
+            <li class="left"><img src="logos/logo_navbar.png" id="logo" /></li>
             <li><a href="#contact">Stay in contact</a></li>
             <li><a href="#whoweare">Who we are</a></li>
             <li><a href="#about">About Pulse</a></li>
         </ul>
 
         <div id="centralMessage">
-            <div id="heading">Get to the heart of your city.</div>
-            <div id="subtitle">Be the first to hear when we launch!</div>
+            <div class="heading">Get to the heart of your city.</div>
+            <div class="subtitle">Be the first to hear when we launch!</div>
             <form>
-                <input type="text" id="roundedTextbox" value="Enter email" name="Enter email" class="signup"/>
+                <input type="text" id="roundedTextbox" value="Enter email" name="Enter email" class="signup" />
                 <button type="submit" id="roundedButton">Submit</button>
             </form>
         </div>
+    </div>
+
+    <div class="textPanel">
+        <div class="textPanelHeading">About Pulse</div>
+        <p>Pulse is a revolutionary blah blah...</p>
+    </div>
+
+    <div class="textPanel">
+        <div class="textPanelHeading">Who we are</div>
+        <p>// Put team pictures here</p>
+    </div>
+
+    <div class="textPanel">
+        <div class="textPanelHeading">Stay in contact</div>
+        <p>// contact form</p>
+    </div>
+
+    <div class="footerPanel">
+        <div class="textPanelHeading" id="footerPanelHeading">Pulse 2018, Hatchery</div>
+        <p>Footer stuff goes here</p>
     </div>
 
 </body>
