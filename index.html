@@ -2,9 +2,24 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
     <meta charset="utf-8" />
     <title>My Pulse</title>
+
+    <script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+
+            var content = $("#centralMessage");
+            var top = (window.innerHeight - content.height()) / 2;
+            var left = (window.innerWidth - content.width()) / 2;
+
+            content.css('top', Math.max(0, top) + 'px');
+            content.css('left', Math.max(0, left) + 'px');
+        });
+
+    </script>
+
     <style type="text/css">
 
         @font-face {
@@ -17,7 +32,7 @@
             margin: 0;
         }
 
-        .background {
+        .imagePanel {
             background-image: url("skyline.png");
             height: 100%;
             /* Center and scale the image nicely */
@@ -26,8 +41,27 @@
             background-size: cover;
         }
 
+        #centralMessage {
+            position: absolute;
+            background-color: #FFF;
+            color: #CC5D56;
+            padding:20px;
+            border-radius:5px;
+            font-family: 'Lato', sans-serif;
+            text-align:center;
+            z-index: 2;
+        }
+
+        #heading {
+            font-size: 80px;
+        }
+
+        #subtitle {
+            font-size:30px;
+        }
+
         #logo {
-            height:50px;
+            height: 50px;
             padding: 3px 10px;
         }
 
@@ -36,8 +70,8 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
-            font-family: 'Lato', sans-serif;
-            font-size:larger;
+            font-family: 'Lato', light;
+            font-size: larger;
             background-color: #22254B;
         }
 
@@ -75,13 +109,18 @@
 </head>
 <body>
 
-    <div class="background">
+    <div class="imagePanel">
         <ul class="topnav">
             <li class="left"><img src="logos/logo_navbar.png" id="logo"/></li>
             <li><a href="#contact">Stay in contact</a></li>
             <li><a href="#whoweare">Who we are</a></li>
             <li><a href="#about">About Pulse</a></li>
         </ul>
+
+        <div id="centralMessage">
+            <div id="heading">Get to the heart of your city.</div>
+            <div id="subtitle">Be the first to hear when we launch!</div>
+        </div>
     </div>
 
 </body>
