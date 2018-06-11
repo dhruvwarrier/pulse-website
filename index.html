@@ -106,11 +106,24 @@
         }
 
         #roundedButton {
-
+            height: 43px;
+            width: 100px;
+            margin-left: 20px;
+            color: white;
+            background-color: #CC5D56;
+            font-size: 20px;
+            border: none;
+            border-radius: 30px;
         }
+
+            #roundedButton:hover {
+                cursor:pointer;
+            }
 
         ul.topnav {
             list-style-type: none;
+            position:fixed;
+            width:100%;
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -166,7 +179,7 @@
             <div id="subtitle">Be the first to hear when we launch!</div>
             <form>
                 <input type="text" id="roundedTextbox" value="Enter email" name="Enter email" class="signup"/>
-                
+                <button type="submit" id="roundedButton">Submit</button>
             </form>
         </div>
     </div>
