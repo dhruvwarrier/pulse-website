@@ -38,6 +38,15 @@
             }
         }
 
+        function centralize(element) {
+            var content = $(element);
+            var top = (window.innerHeight - content.height()) / 2;
+            var left = (window.innerWidth - content.width()) / 2;
+
+            content.css('top', Math.max(0, top) + 'px');
+            content.css('left', Math.max(0, left) + 'px');
+        }
+
         $(document).ready(function () {
             // for some reason injection of the function into window is necessary, it won't run under <script>
             window.goTo = function (objectID) {
@@ -46,13 +55,7 @@
         });
 
         $(window).on('load', function () {
-
-            var content = $("#centralMessage");
-            var top = (window.innerHeight - content.height()) / 2;
-            var left = (window.innerWidth - content.width()) / 2;
-
-            content.css('top', Math.max(0, top) + 'px');
-            content.css('left', Math.max(0, left) + 'px');
+            centralize("#centralMessage");
         });
 
     </script>
@@ -76,6 +79,7 @@
         #logo {
             height: 50px;
             padding: 3px 10px;
+            cursor:pointer;
         }
 
         .imagePanel {
@@ -88,7 +92,6 @@
         }
 
         .textPanel {
-            height: 60%;
             background-color: #f9f9f9;
         }
 
@@ -99,12 +102,68 @@
             padding: 30px;
         }
 
+        .textPanelContent {
+            padding:20px;
+            font-size:25px;
+        }
+
+        .textPanelImage {
+            padding:0px 20px;
+            height:90%; /* relative to the textPanelBlock */
+            margin-top:3%;
+        }
+
+        .left {
+            float:left;
+        }
+
+        .right {
+            float:right;
+        }
+
+        .textPanelBlock {
+            height:50%;
+            width:50%;
+        }
+
+            .textPanelBlock.blue {
+                background: #386565;
+                background: linear-gradient(#22254B, #386565);
+            }
+
+            .textPanelBlock.white {
+                background: #73627B;
+                background: linear-gradient(#0000, #73627B);
+            }
+
+            .textPanelBlock.pink {
+                background: #A41F60;
+                background: linear-gradient(#A41F60, #11040F);
+            }
+
+        .textPanelBlockHeading {
+            margin-top:4%;
+            font-size:40px;
+        }
+
+            .textPanelBlockHeading.light {
+                color:#FFF;
+            }
+
+            .textPanelBlockHeading.dark {
+                color: #57164C;
+            }
+
+        #about {
+            height:140%;
+        }
+
         .footerPanel {
             height: 40%;
             background-color: #22254B;
         }
 
-        #footerPanelHeading {
+        .footerPanelHeading {
             color: #CC5D56;
         }
 
@@ -190,7 +249,7 @@
                     float: left;
                 }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 700px) {
             ul.topnav li.left,
             ul.topnav li {
                 float: none;
@@ -201,10 +260,10 @@
 <body>
     <div class="imagePanel">
         <ul class="topnav">
-            <li class="left"><img src="logos/logo_navbar.png" id="logo" /></li>
+            <li class="left"><img src="logos/logo_navbar.png" id="logo" onclick="goTo('.imagePanel')"/></li>
             <li><a onclick="goTo('#contact');">Stay in contact</a></li>
             <li><a onclick="goTo('#whoweare');">Who we are</a></li>
-            <li><a onclick="goTo('#about');">About Pulse</a></li>
+            <li><a onclick="goTo('#aboutHeading');">About Pulse</a></li>
         </ul>
 
         <div id="centralMessage">
@@ -218,23 +277,40 @@
     </div>
 
     <div class="textPanel" id="about">
-        <div class="textPanelHeading">About Pulse</div>
-        <p>Pulse is a revolutionary new bla bla...</p>
+        <div class="textPanelHeading" id="aboutHeading">Why Pulse?</div>
+
+        <div class="textPanelBlock blue left">
+            <img src="phone.png" class="textPanelImage left"/>
+            <div class="textPanelBlockHeading light">The city is your playground</div>
+        </div>
+        <div class="textPanelBlock white right">
+            <img src="phone.png" class="textPanelImage right" />
+            <div class="textPanelBlockHeading dark">The city is your playground</div>
+        </div>
+        <div class="textPanelBlock white left">
+            <img src="phone.png" class="textPanelImage left" />
+            <div class="textPanelBlockHeading dark">The city is your playground</div>
+        </div>
+        <div class="textPanelBlock pink right">
+            <img src="phone.png" class="textPanelImage right" />
+            <div class="textPanelBlockHeading light">The city is your playground</div>
+        </div>
+
     </div>
 
     <div class="textPanel" id="whoweare">
         <div class="textPanelHeading">Who we are</div>
-        <p>// Put team pictures here</p>
+        <div class="textPanelContent">// Put team pictures here</div>
     </div>
 
     <div class="textPanel" id="contact">
         <div class="textPanelHeading">Stay in contact</div>
-        <p>// contact form</p>
+        <div class="textPanelContent">// contact form</div>
     </div>
 
     <div class="footerPanel">
-        <div class="textPanelHeading" id="footerPanelHeading">Pulse 2018, Hatchery</div>
-        <p>Footer stuff goes here</p>
+        <div class="textPanelHeading footerPanelHeading">Pulse 2018, Hatchery</div>
+        <div class="textPanelContent">Footer stuff goes here</div>
     </div>
 
 </body>
