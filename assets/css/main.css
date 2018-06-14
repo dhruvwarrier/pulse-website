@@ -1,0 +1,224 @@
+﻿* {
+    font-family: 'Lato', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+#logo {
+    height: 50px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.imagePanel {
+    background-image: url("../images/skyline.png");
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.textPanel {
+    background-color: #f9f9f9;
+}
+
+.textPanelHeading {
+    color: #22254B;
+    font-size: 50px;
+    text-align: center;
+    padding: 30px;
+}
+
+.textPanelContent {
+    padding: 20px;
+    font-size: 25px;
+}
+
+.textPanelImage {
+    padding: 0 20px;
+    height: 90%; /* relative to the textPanelBlock */
+    margin-top: 3%;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.textPanelBlock {
+    height: 50%;
+    width: 50%;
+}
+
+    .textPanelBlock.blue {
+        background: #386565;
+        background: linear-gradient(#22254B, #386565);
+    }
+
+    .textPanelBlock.white {
+        background: #73627B;
+        background: linear-gradient(#0000, #73627B);
+    }
+
+    .textPanelBlock.pink {
+        background: #A41F60;
+        background: linear-gradient(#A41F60, #11040F);
+    }
+
+.textPanelBlockHeading {
+    margin-top: 4%;
+    font-size: 48px;
+}
+
+    .textPanelBlockHeading.light {
+        color: #FFF;
+    }
+
+    .textPanelBlockHeading.dark {
+        color: #57164C;
+    }
+
+    .textPanelBlockHeading.left {
+        float:unset;
+        margin-right:2%;
+        text-align:left;
+    }
+
+    .textPanelBlockHeading.right {
+        float: unset;
+        margin-left:2%;
+        text-align:right;
+    }
+
+.textPanelBlockContent {
+    margin-top:8%;
+    padding:20px;
+    font-size:30px;
+}
+
+    .textPanelBlockContent.light {
+        color:#FFF;
+    }
+
+    .textPanelBlockContent.dark {
+        color: #57164C;
+    }
+
+    .textPanelBlockContent.left {
+        float:unset;
+        text-align:left;
+    }
+
+    .textPanelBlockContent.right {
+        float:unset;
+        text-align:right;
+    }
+
+#about {
+    height: 140%;
+}
+
+.footerPanel {
+    height: 40%;
+    background-color: #22254B;
+}
+
+.footerPanelHeading {
+    color: #CC5D56;
+}
+
+#centralMessage {
+    position: absolute;
+    background-color: #FFF;
+    color: #CC5D56;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 1;
+}
+
+.heading {
+    font-size: 80px;
+}
+
+.subtitle {
+    margin-top: 15px;
+    font-size: 25px;
+}
+
+#roundedTextbox {
+    height: 40px;
+    width: 400px;
+    font-size: 25px;
+    color: #6FCACA;
+    padding: 0 20px;
+    margin-top: 20px;
+    border: 1px solid #949999;
+    border-radius: 30px;
+}
+
+#roundedButton {
+    height: 43px;
+    width: 100px;
+    margin-left: 20px;
+    color: white;
+    background-color: #CC5D56;
+    font-size: 20px;
+    border: none;
+    border-radius: 30px;
+}
+
+    #roundedButton:hover {
+        cursor: pointer;
+    }
+
+ul.topnav {
+    list-style-type: none;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: larger;
+    background-color: #22254B;
+    z-index: 2;
+}
+
+    ul.topnav li {
+        float: right;
+    }
+
+        ul.topnav li a {
+            display: block;
+            cursor: pointer;
+            color: #CC5D56;
+            text-align: center;
+            padding: 20px 30px;
+            text-decoration: none;
+        }
+
+            ul.topnav li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            ul.topnav li a.active {
+                background-color: #4CAF50;
+            }
+
+        ul.topnav li.left {
+            float: left;
+        }
+
+@media screen and (max-width: 700px) {
+    ul.topnav li.left,
+    ul.topnav li {
+        float: none;
+    }
+}

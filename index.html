@@ -3,208 +3,22 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet" />
     <meta charset="utf-8" />
     <title>My Pulse</title>
 
-    <script type="text/javascript" src="jquery-3.3.1.js"></script>
-    <script type="text/javascript" src="smoothscroll.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="assets/javascript/smoothscroll.min.js"></script>
+    <script type="text/javascript" src="assets/javascript/main.js"></script>
 
-    <script type="text/javascript">
-
-        textbox: {
-            $(document).ready(function () {
-                $(".signup").attr({
-                    onfocus: "empty(this);",
-                    onblur: "fill(this);"
-                });
-            });
-
-            function empty(textbox) {
-                if (textbox.value == textbox.name) {
-                    textbox.value = "";
-                    if (textbox.name == "Password") {
-                        textbox.type = "password";
-                    }
-                }
-            }
-
-            function fill(textbox) {
-                if (!textbox.value) {
-                    textbox.value = textbox.name;
-                    if (textbox.name == "Password") {
-                        textbox.type = "text";
-                    }
-                }
-            }
-        }
-
-        $(document).ready(function () {
-            // for some reason injection of the function into window is necessary, it won't run under <script>
-            window.goTo = function (objectID) {
-                document.querySelector(objectID).scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-
-        $(window).on('load', function () {
-
-            var content = $("#centralMessage");
-            var top = (window.innerHeight - content.height()) / 2;
-            var left = (window.innerWidth - content.width()) / 2;
-
-            content.css('top', Math.max(0, top) + 'px');
-            content.css('left', Math.max(0, left) + 'px');
-        });
-
-    </script>
-
-    <style type="text/css">
-
-        @font-face {
-            font-family: Simplifica;
-            src: url(simplifica.ttf) format('truetype');
-        }
-
-        * {
-            font-family: 'Lato', sans-serif;
-        }
-
-        body, html {
-            height: 100%;
-            margin: 0;
-        }
-
-        #logo {
-            height: 50px;
-            padding: 3px 10px;
-        }
-
-        .imagePanel {
-            background-image: url("skyline.png");
-            height: 100%;
-            /* Center and scale the image nicely */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .textPanel {
-            height: 60%;
-            background-color: #f9f9f9;
-        }
-
-        .textPanelHeading {
-            color: #22254B;
-            font-size: 50px;
-            text-align: center;
-            padding: 30px;
-        }
-
-        .footerPanel {
-            height: 40%;
-            background-color: #22254B;
-        }
-
-        #footerPanelHeading {
-            color: #CC5D56;
-        }
-
-        #centralMessage {
-            position: absolute;
-            background-color: #FFF;
-            color: #CC5D56;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            z-index: 1;
-        }
-
-        .heading {
-            font-size: 80px;
-        }
-
-        .subtitle {
-            margin-top: 15px;
-            font-size: 25px;
-        }
-
-        #roundedTextbox {
-            height: 40px;
-            width: 400px;
-            font-size: 25px;
-            color: #6FCACA;
-            padding: 0px 20px;
-            margin-top: 20px;
-            border: 1px solid #949999;
-            border-radius: 30px;
-        }
-
-        #roundedButton {
-            height: 43px;
-            width: 100px;
-            margin-left: 20px;
-            color: white;
-            background-color: #CC5D56;
-            font-size: 20px;
-            border: none;
-            border-radius: 30px;
-        }
-
-            #roundedButton:hover {
-                cursor: pointer;
-            }
-
-        ul.topnav {
-            list-style-type: none;
-            position: fixed;
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            font-size: larger;
-            background-color: #22254B;
-            z-index: 2;
-        }
-
-            ul.topnav li {
-                float: right;
-            }
-
-                ul.topnav li a {
-                    display: block;
-                    cursor:pointer;
-                    color: #CC5D56;
-                    text-align: center;
-                    padding: 20px 30px;
-                    text-decoration: none;
-                }
-
-                    ul.topnav li a:hover:not(.active) {
-                        background-color: #111;
-                    }
-
-                    ul.topnav li a.active {
-                        background-color: #4CAF50;
-                    }
-
-                ul.topnav li.left {
-                    float: left;
-                }
-
-        @media screen and (max-width: 600px) {
-            ul.topnav li.left,
-            ul.topnav li {
-                float: none;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="imagePanel">
         <ul class="topnav">
-            <li class="left"><img src="logos/logo_navbar.png" id="logo" /></li>
+            <li class="left"><img src="assets/images/logos/logo_navbar.png" id="logo" onclick="goTo('.imagePanel')"/></li>
             <li><a onclick="goTo('#contact');">Stay in contact</a></li>
             <li><a onclick="goTo('#whoweare');">Who we are</a></li>
-            <li><a onclick="goTo('#about');">About Pulse</a></li>
+            <li><a onclick="goTo('#aboutHeading');">About Pulse</a></li>
         </ul>
 
         <div id="centralMessage">
@@ -218,23 +32,44 @@
     </div>
 
     <div class="textPanel" id="about">
-        <div class="textPanelHeading">About Pulse</div>
-        <p>Pulse is a revolutionary new bla bla...</p>
+        <div class="textPanelHeading" id="aboutHeading">Why Pulse?</div>
+
+        <div class="textPanelBlock blue left">
+            <img src="assets/images/phone.png" class="textPanelImage left"/>
+            <div class="textPanelBlockHeading light left">The city is your playground</div>
+            <div class="textPanelBlockContent light left">Discover events you never would have before</div>
+        </div>
+        <div class="textPanelBlock white right">
+            <img src="assets/images/phone.png" class="textPanelImage right" />
+            <div class="textPanelBlockHeading dark right">Get recommendations you care about</div>
+            <div class="textPanelBlockContent dark right">#checkyourpulse to find events that truly interest you</div>
+        </div>
+        <div class="textPanelBlock white left">
+            <img src="assets/images/phone.png" class="textPanelImage left" />
+            <div class="textPanelBlockHeading dark left">It's really simple</div>
+            <div class="textPanelBlockContent dark left">Don't search for events. And in 2 taps you've got tickets</div>
+        </div>
+        <div class="textPanelBlock pink right">
+            <img src="assets/images/phone.png" class="textPanelImage right" />
+            <div class="textPanelBlockHeading light right">Pulse with your friends</div>
+            <div class="textPanelBlockContent light right">Make a group chat and plan your arrival, or find how much you match with your friends</div>
+        </div>
+
     </div>
 
     <div class="textPanel" id="whoweare">
         <div class="textPanelHeading">Who we are</div>
-        <p>// Put team pictures here</p>
+        <div class="textPanelContent">// Put team pictures here</div>
     </div>
 
     <div class="textPanel" id="contact">
         <div class="textPanelHeading">Stay in contact</div>
-        <p>// contact form</p>
+        <div class="textPanelContent">// contact form</div>
     </div>
 
     <div class="footerPanel">
-        <div class="textPanelHeading" id="footerPanelHeading">Pulse 2018, Hatchery</div>
-        <p>Footer stuff goes here</p>
+        <div class="textPanelHeading footerPanelHeading">Pulse 2018, Hatchery</div>
+        <div class="textPanelContent">Footer stuff goes here</div>
     </div>
 
 </body>
