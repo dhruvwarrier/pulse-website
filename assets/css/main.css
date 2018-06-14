@@ -74,7 +74,7 @@ body, html {
 
 .textPanelBlockHeading {
     margin-top: 4%;
-    font-size: 40px;
+    font-size: 48px;
 }
 
     .textPanelBlockHeading.light {
@@ -83,6 +83,42 @@ body, html {
 
     .textPanelBlockHeading.dark {
         color: #57164C;
+    }
+
+    .textPanelBlockHeading.left {
+        float:unset;
+        margin-right:2%;
+        text-align:left;
+    }
+
+    .textPanelBlockHeading.right {
+        float: unset;
+        margin-left:2%;
+        text-align:right;
+    }
+
+.textPanelBlockContent {
+    margin-top:8%;
+    padding:20px;
+    font-size:30px;
+}
+
+    .textPanelBlockContent.light {
+        color:#FFF;
+    }
+
+    .textPanelBlockContent.dark {
+        color: #57164C;
+    }
+
+    .textPanelBlockContent.left {
+        float:unset;
+        text-align:left;
+    }
+
+    .textPanelBlockContent.right {
+        float:unset;
+        text-align:right;
     }
 
 #about {
