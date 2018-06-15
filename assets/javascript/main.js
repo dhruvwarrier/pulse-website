@@ -42,3 +42,7 @@ $(document).ready(function () {
 $(window).on('load', function () {
     centralize("#centralMessage");
 });
+
+$(window).resize(function () {
+    centralize("#centralMessage");
+});
