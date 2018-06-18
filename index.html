@@ -16,7 +16,7 @@
     <div class="imagePanel">
         <ul class="topnav">
             <li class="left"><img src="assets/images/logos/logo_navbar.png" id="logo" onclick="goTo('.imagePanel')" /></li>
-            <li><a onclick="goTo('#contact');">Stay in contact</a></li>
+            <li><a onclick="goTo('#contactPanel');">Stay in contact</a></li>
             <li><a onclick="goTo('#aboutHeading');">Why Pulse?</a></li>
             <li><a onclick="goTo('#visionPanel');">Our Vision</a></li>
         </ul>
@@ -75,14 +75,19 @@
                 <input type="text" value="Enter email" name="Enter email" class="signup roundedTextbox contactForm" /><br />
                 <input type="text" value="Subject" name="Subject" class="signup roundedTextbox contactForm" /><br />
                 <textarea class="signup roundedTextbox roundedTextarea contactForm" name="Message">Message</textarea><br />
-                <button type="submit" class="roundedButton">Submit</button>
+                <button type="submit" class="roundedButton" id="contactFormSubmit">Submit</button>
             </form>
         </div>
     </div>
 
     <div class="footerPanel">
-        <div class="textPanelHeading footerPanelHeading">Pulse 2018, Hatchery</div>
-        <div class="textPanelContent">Footer stuff goes here</div>
+        <div class="footerContent">
+            <img src="assets/images/fb_logo.png" height="40" width="40" class="footerLogoArray">
+            <img src="assets/images/twitter_logo.png" height="40" width="45" class="footerLogoArray"/>
+            <img src="assets/images/instagram_logo.png" height="40" width="40" class="footerLogoArray"/>
+            <br /><br />
+            Pulse 2018
+        </div>
     </div>
 
 </body>

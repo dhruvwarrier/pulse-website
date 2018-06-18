@@ -24,6 +24,8 @@ body, html {
 
 .textPanel {
     background-color: #f9f9f9;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
 }
 
 .textPanelHeading {
@@ -138,6 +140,10 @@ body, html {
     text-align:center;
 }
 
+#visionContent {
+    padding-bottom: 5.5%;
+}
+
 #visionHeading {
     padding-bottom:10px;
 }
@@ -146,14 +152,20 @@ body, html {
     padding-top:10%;
 }
 
-#visionContent {
-    padding-top:2%;
-    padding-bottom:3%;
-}
-
 .footerPanel {
     height: 40%;
     background-color: #22254B;
+}
+
+.footerContent {
+    font-size:1.5vw;
+    color:white;
+    padding-top:7%;
+    text-align:center;
+}
+
+.footerLogoArray {
+    padding:8px;
 }
 
 .footerPanelHeading {
@@ -214,6 +226,12 @@ body, html {
     .roundedButton:hover {
         cursor: pointer;
     }
+
+#contactFormSubmit {
+    height:3.5vw;
+    width:7.5vw;
+    font-size:1.5vw;
+}
 
 #centralMessageSubmit {
     margin-left: 20px;
