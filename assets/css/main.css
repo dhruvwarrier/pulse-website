@@ -30,18 +30,17 @@ body, html {
     color: #22254B;
     font-size: 3.2vw;
     text-align: center;
-    padding: 30px;
+    padding:30px;
 }
 
 .textPanelContent {
-    padding: 20px;
+    padding: 0 0 20px 0;
     font-size: 2.1vw;
+    color: #57164C;
 }
 
 .textPanelImage {
-    padding: 0 20px;
-    height: 90%; /* relative to the textPanelBlock */
-    margin-top: 3%;
+    height:120px;
 }
 
 .left {
@@ -64,7 +63,7 @@ body, html {
 
     .textPanelBlock.white {
         background: #73627B;
-        background: linear-gradient(#0000, #73627B);
+        background: linear-gradient(#FFF, #73627B);
     }
 
     .textPanelBlock.pink {
@@ -121,8 +120,35 @@ body, html {
         text-align:right;
     }
 
-#about {
+.textPanelBlockImage {
+    padding: 0 20px;
+    height: 90%; /* relative to the textPanelBlock */
+    margin-top: 3%;
+}
+
+#aboutPanel {
     height: 140%;
+}
+
+#contactPanel {
+    text-align: center;
+}
+
+#visionPanel {
+    text-align:center;
+}
+
+#visionHeading {
+    padding-bottom:10px;
+}
+
+#contactHeading {
+    padding-top:10%;
+}
+
+#visionContent {
+    padding-top:2%;
+    padding-bottom:3%;
 }
 
 .footerPanel {
@@ -153,7 +179,7 @@ body, html {
     font-size: 1.7vw;
 }
 
-#roundedTextbox {
+.roundedTextbox {
     height: 2.6vw;
     width: 26.1vw;
     font-size: 1.7vw;
@@ -164,10 +190,20 @@ body, html {
     border-radius: 30px;
 }
 
-#roundedButton {
+.roundedTextarea {
+    height:10vw;
+    width:26.1vw;
+    padding-top:10px;
+}
+
+.contactForm {
+    width:52.2vw;
+    margin-top:1%;
+}
+
+.roundedButton {
     height: 2.8vw;
     width: 6.5vw;
-    margin-left: 20px;
     color: white;
     background-color: #CC5D56;
     font-size: 1.3vw;
@@ -175,9 +211,13 @@ body, html {
     border-radius: 30px;
 }
 
-    #roundedButton:hover {
+    .roundedButton:hover {
         cursor: pointer;
     }
+
+#centralMessageSubmit {
+    margin-left: 20px;
+}
 
 ul.topnav {
     list-style-type: none;

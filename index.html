@@ -15,56 +15,69 @@
 <body>
     <div class="imagePanel">
         <ul class="topnav">
-            <li class="left"><img src="assets/images/logos/logo_navbar.png" id="logo" onclick="goTo('.imagePanel')"/></li>
+            <li class="left"><img src="assets/images/logos/logo_navbar.png" id="logo" onclick="goTo('.imagePanel')" /></li>
             <li><a onclick="goTo('#contact');">Stay in contact</a></li>
-            <li><a onclick="goTo('#whoweare');">Who we are</a></li>
-            <li><a onclick="goTo('#aboutHeading');">About Pulse</a></li>
+            <li><a onclick="goTo('#aboutHeading');">Why Pulse?</a></li>
+            <li><a onclick="goTo('#visionPanel');">Our Vision</a></li>
         </ul>
 
         <div id="centralMessage">
             <div class="heading">Get to the heart of your city.</div>
             <div class="subtitle">Be the first to hear when we launch!</div>
             <form>
-                <input type="text" id="roundedTextbox" value="Enter email" name="Enter email" class="signup" />
-                <button type="submit" id="roundedButton">Submit</button>
+                <input type="text" value="Enter email" name="Enter email" class="signup roundedTextbox" />
+                <button type="submit" class="roundedButton" id="centralMessageSubmit">Submit</button>
             </form>
         </div>
     </div>
 
-    <div class="textPanel" id="about">
+    <div class="textPanel" id="visionPanel">
+        <div class="textPanelHeading" id="visionHeading">Our Vision</div>
+        <img src="assets/images/pulseCode.png" class="textPanelImage"/>
+        <div class="textPanelContent" id="visionContent">
+            Nobody likes missing out.<br />
+            Pulse strives to create a world where you always know what to do.
+        </div>
+    </div>
+
+    <div class="textPanel" id="aboutPanel">
         <div class="textPanelHeading" id="aboutHeading">Why Pulse?</div>
 
         <div class="textPanelBlock blue left">
-            <img src="assets/images/phone.png" class="textPanelImage left"/>
+            <img src="assets/images/phone.png" class="textPanelBlockImage left" />
             <div class="textPanelBlockHeading light left">The city is your playground</div>
             <div class="textPanelBlockContent light left">Discover events you never would have before</div>
         </div>
         <div class="textPanelBlock white right">
-            <img src="assets/images/phone.png" class="textPanelImage right" />
+            <img src="assets/images/phone.png" class="textPanelBlockImage right" />
             <div class="textPanelBlockHeading dark right">Get recommendations you care about</div>
             <div class="textPanelBlockContent dark right">#checkyourpulse to find events that truly interest you</div>
         </div>
         <div class="textPanelBlock white left">
-            <img src="assets/images/phone.png" class="textPanelImage left" />
-            <div class="textPanelBlockHeading dark left">It's really simple</div>
-            <div class="textPanelBlockContent dark left">Don't search for events. And in 2 taps you've got tickets</div>
+            <img src="assets/images/phone.png" class="textPanelBlockImage left" />
+            <div class="textPanelBlockHeading dark left">Meet new people easily</div>
+            <div class="textPanelBlockContent dark left">Build your network easily with PulseCode</div>
         </div>
         <div class="textPanelBlock pink right">
-            <img src="assets/images/phone.png" class="textPanelImage right" />
+            <img src="assets/images/phone.png" class="textPanelBlockImage right" />
             <div class="textPanelBlockHeading light right">Pulse with your friends</div>
             <div class="textPanelBlockContent light right">Make a group chat and plan your arrival, or find how much you match with your friends</div>
         </div>
 
     </div>
 
-    <div class="textPanel" id="whoweare">
-        <div class="textPanelHeading">Who we are</div>
-        <div class="textPanelContent">// Put team pictures here</div>
-    </div>
-
-    <div class="textPanel" id="contact">
-        <div class="textPanelHeading">Stay in contact</div>
-        <div class="textPanelContent">// contact form</div>
+    <div class="textPanel" id="contactPanel">
+        <div class="textPanelHeading" id="contactHeading">Stay in contact</div>
+        <div class="textPanelContent">
+            We'd love to hear what you think about Pulse! Shoot us a message.
+            <br /><br />
+            <form>
+                <input type="text" value="Enter email" name="Enter email" class="signup roundedTextbox contactForm" /><br />
+                <input type="text" value="Subject" name="Subject" class="signup roundedTextbox contactForm" /><br />
+                <textarea class="signup roundedTextbox roundedTextarea contactForm" name="Message">Message</textarea><br />
+                <button type="submit" class="roundedButton">Submit</button>
+            </form>
+        </div>
     </div>
 
     <div class="footerPanel">
