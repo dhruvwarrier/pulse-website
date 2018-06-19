@@ -175,7 +175,7 @@ body, html {
 #centralMessage {
     position: absolute;
     background-color: #FFF;
-    color: #CC5D56;
+    color: #cc5d56;
     padding: 20px;
     border-radius: 5px;
     text-align: center;
@@ -196,6 +196,7 @@ body, html {
     width: 26.1vw;
     font-size: 1.7vw;
     color: #6FCACA;
+    background-color: #FFF;
     padding: 0 20px;
     margin-top: 20px;
     border: 1px solid #949999;
