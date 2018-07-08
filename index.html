@@ -27,9 +27,14 @@
         <div id="centralMessage">
             <div class="heading">Get to the heart of your city.</div>
             <div class="subtitle">Be the first to hear when we launch!</div>
-            <form>
-                <input type="text" value="Enter email" name="Enter email" class="signup roundedTextbox" />
-                <button type="submit" class="roundedButton" id="centralMessageSubmit">Submit</button>
+            <form action="https://mypulse.us18.list-manage.com/subscribe/post?u=a733f6f73e3f7f872f9b486f0&amp;id=5a46ec5182" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+
+                <input type="email" value="" name="EMAIL" class="email roundedTextbox" id="mce-EMAIL" placeholder="Enter email" required>
+                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                    <input type="text" name="b_a733f6f73e3f7f872f9b486f0_5a46ec5182" tabindex="-1" value=""> <!-- Prevents bot form signups -->
+                </div>
+                <button type="submit" class="roundedButton button" id="centralMessageSubmit" name="subscribe">Submit</button>
+
             </form>
         </div>
     </div>
@@ -74,10 +79,9 @@
         <div class="textPanelContent">
             We'd love to hear what you think about Pulse! Shoot us a message.
             <br /><br />
-            <form>
-                <input type="text" value="Email" name="Email" class="signup roundedTextbox contactForm" /><br />
-                <input type="text" value="Subject" name="Subject" class="signup roundedTextbox contactForm" /><br />
-                <textarea class="signup roundedTextbox roundedTextarea contactForm" name="Message">Message</textarea><br />
+            <form action="mailto:hello@mypulse.ca" method="get">
+                <input type="text" name="subject" class="roundedTextbox contactForm" placeholder="Subject"/><br />
+                <textarea class="signup roundedTextbox roundedTextarea contactForm" name="body" placeholder="Message"></textarea><br />
                 <button type="submit" class="roundedButton" id="contactFormSubmit">Submit</button>
             </form>
         </div>
