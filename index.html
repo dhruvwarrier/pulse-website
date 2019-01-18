@@ -16,14 +16,15 @@
 
 </head>
 <body>
-    <div class="imagePanel">
-        <ul class="topnav">
-            <li class="left"><img src="assets/images/logos/logo_navbar.png" id="logo" onclick="goTo('.imagePanel')" /></li>
-            <li><a onclick="goTo('#contactPanel');">Stay in contact</a></li>
-            <li><a onclick="goTo('#aboutHeading');">Why Pulse?</a></li>
-            <li><a onclick="goTo('#visionPanel');">Our Vision</a></li>
-        </ul>
 
+    <ul class="topnav">
+        <li class="left"><img src="assets/images/logos/logo_navbar.png" id="logo" onclick="goTo('.imagePanel')" /></li>
+        <li><a onclick="goTo('#contactPanel');">Stay in contact</a></li>
+        <li><a onclick="goTo('#aboutHeading');">Why Pulse?</a></li>
+        <li><a onclick="goTo('#visionPanel');">Our Vision</a></li>
+    </ul>
+
+    <div class="imagePanel">
         <div id="centralMessage">
             <div class="heading">Get to the heart of your city.</div>
             <div class="subtitle">Be the first to hear when we launch!</div>
@@ -41,7 +42,7 @@
 
     <div class="textPanel" id="visionPanel">
         <div class="textPanelHeading" id="visionHeading">Our Vision</div>
-        <img src="assets/images/pulseCode.png" class="textPanelImage"/>
+        <img src="assets/images/pulseCode.png" class="textPanelImage" />
         <div class="textPanelContent" id="visionContent">
             Nobody likes missing out.<br />
             Pulse strives to create a world where you always know what to do.
@@ -58,7 +59,7 @@
         </div>
         <div class="textPanelBlock white right">
             <img src="assets/images/recommendations.png" class="textPanelBlockImage right" />
-            <div class="textPanelBlockHeading dark right">Get recommendations you care about</div>
+            <div class="textPanelBlockHeading dark right">Get suggestions you care about</div>
             <div class="textPanelBlockContent dark right">#checkyourpulse to find events that truly interest you</div>
         </div>
         <div class="textPanelBlock white left">
@@ -80,7 +81,7 @@
             We'd love to hear what you think about Pulse! Shoot us a message.
             <br /><br />
             <form action="mailto:hello@mypulse.ca" method="get">
-                <input type="text" name="subject" class="roundedTextbox contactForm" placeholder="Subject"/><br />
+                <input type="text" name="subject" class="roundedTextbox contactForm" placeholder="Subject" /><br />
                 <textarea class="roundedTextbox roundedTextarea contactForm" name="body" placeholder="Message"></textarea><br />
                 <button type="submit" class="roundedButton" id="contactFormSubmit">Submit</button>
             </form>
